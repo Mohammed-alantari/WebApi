@@ -35,9 +35,15 @@ namespace WebApi.Models
     public class RegisterBindingModel
     {
         [Required]
+        [Display(Name = "User Name")]
+        public string Name { get; set; }
+
+        [Required]
         [Display(Name = "Email")]
         public string Email { get; set; }
-
+        [Required]
+        [Display(Name = "Phone Number")]
+        public string Phone { get; set; }
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
         [DataType(DataType.Password)]
@@ -80,5 +86,12 @@ namespace WebApi.Models
         [Display(Name = "Confirm new password")]
         [Compare("NewPassword", ErrorMessage = "The new password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+    }
+    public class LoginModel
+    {
+        public string Email { get; set; }
+        [DataType(DataType.Password)]
+        public string  Password { get; set; }
+
     }
 }

@@ -13,6 +13,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.OAuth;
+using Newtonsoft.Json;
 using WebApi.Models;
 using WebApi.Providers;
 using WebApi.Results;
@@ -323,12 +324,8 @@ namespace WebApi.Controllers
         [Route("Register")]
         public async Task<IHttpActionResult> Register(RegisterBindingModel model)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            var user = new ApplicationUser() { UserName = model.Email, Email = model.Email };
+ 
+            var user = new ApplicationUser() { UserName = model.Email, Email = model.Email,Name= model.Name,PhoneNumber=model.Phone };
 
             IdentityResult result = await UserManager.CreateAsync(user, model.Password);
 
@@ -337,7 +334,10 @@ namespace WebApi.Controllers
                 return GetErrorResult(result);
             }
 
-            return Ok();
+        
+                return Ok();
+            
+            
         }
 
         // POST api/Account/RegisterExternal
@@ -404,7 +404,7 @@ namespace WebApi.Controllers
                 {
                     foreach (string error in result.Errors)
                     {
-                        ModelState.AddModelError("", error);
+                        ModelState.AddModelError("error", error);
                     }
                 }
 

@@ -233,20 +233,31 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AccountMController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\TestModels1Controller.cs" />
+    <Compile Include="Controllers\TestModelsController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="CustomAuthorize.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\ErrorsModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\TestModel.cs" />
+    <Compile Include="Models\UserToken.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\aspnet-WebApi-20181225024804.mdf" />
+    <Content Include="App_Data\aspnet-WebApi-20181225024804_log.ldf">
+      <DependentUpon>aspnet-WebApi-20181225024804.mdf</DependentUpon>
+    </Content>
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -304,10 +315,16 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\AccountM\Register.cshtml" />
+    <Content Include="Views\AccountM\Index.cshtml" />
+    <Content Include="Views\TestModels1\Create.cshtml" />
+    <Content Include="Views\TestModels1\Delete.cshtml" />
+    <Content Include="Views\TestModels1\Details.cshtml" />
+    <Content Include="Views\TestModels1\Edit.cshtml" />
+    <Content Include="Views\TestModels1\Index.cshtml" />
+    <Content Include="Views\AccountM\Login.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
   </ItemGroup>
